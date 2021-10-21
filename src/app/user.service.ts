@@ -11,22 +11,22 @@ export class UserService {
 
   saveUser(user:User){
     // this.userData.push(user)
-    return this.http.post(`https://studentadmin2api.herokuapp.com/user-create`,user)
+    return this.http.post(`https://studentmanage2api.herokuapp.com/user-create`,user)
   }
 
   getAllUser(){
-    return this.http.get<Array<User>>(`https://studentadmin2api.herokuapp.com/user-list`)
+    return this.http.get<Array<User>>(`https://studentmanage2api.herokuapp.com/user-list`)
   }
 
   getUserByID(id:number){
-    return this.http.get<User>(`https://studentadmin2api.herokuapp.com/user-edit/${id}`)
+    return this.http.get<User>(`https://studentmanage2api.herokuapp.com/user-edit/${id}`)
   }
 
   updateUserById(userId:number,userdata:User){
-    return this.http.post(`https://studentadmin2api.herokuapp.com/user-edit/${userId}`,userdata)
+    return this.http.post(`https://studentmanage2api.herokuapp.com/${userId}`,userdata)
   }
 
   deleteUserById(id:number){
-    return this.http.post(`https://studentadmin2api.herokuapp.com/user-delete/${id}`,"")
+    return this.http.post(`https://studentmanage2api.herokuapp.com/user-delete/${id}`,"")
   }
 }
